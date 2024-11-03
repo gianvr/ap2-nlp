@@ -13,7 +13,7 @@ Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transfo
 <div align="center" style="max-width:68rem;">
 <table>
   <tr>
-   <td align="center"><img src="img/sbert.png" width="500px;" alt=""/><br /><sub><b>Fonte: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</b></sub></a><br /><a href="https://arxiv.org/abs/1908.10084" title="Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"></a> Figura 1 - topologia sBERT</td>
+   <td align="center"><a href="https://arxiv.org/abs/1908.10084"><img src="img/sbert.png" width="500px;" alt=""/><br /><sub><b>Fonte: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</b></sub></a><br /><a href="https://arxiv.org/abs/1908.10084" title="Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"></a> Figura 1 - topologia sBERT</td>
   </tr>
 </table>
 </div>
@@ -26,7 +26,7 @@ Para o processo de treinamento os dados foram divididos em 4 dataframes: extrema
 <div align="center" style="max-width:68rem;">
 <table>
   <tr>
-   <td align="center"><img src="img/cosseno_similarity.png" width="700px;" alt=""/><br /><sub><b>Fonte: Cosine similarity</b></sub></a><br /><a href="https://en.wikipedia.org/wiki/Cosine_similarity" title="Cosine similarity"></a> Equação 1 - Similaridade por cossenos</td>
+   <td align="center"><a href="https://en.wikipedia.org/wiki/Cosine_similarity"><img src="img/cosseno_similarity.png" width="700px;" alt=""/><br /><sub><b>Fonte: Cosine similarity</b></sub></a><br /><a href="https://en.wikipedia.org/wiki/Cosine_similarity" title="Cosine similarity"></a> Equação 1 - Similaridade por cossenos</td>
   </tr>
 </table>
 </div>
