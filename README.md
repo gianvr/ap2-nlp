@@ -29,7 +29,7 @@ O dataset utilizado foi o [Coronavirus tweets NLP - Text Classification](https:/
 
 ### 1.2 Processo para gerar embeddings
 
-Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transformers/all-MiniLM-L6-v2` do [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), um modelo do tipo `Sentence Transformer` ou [sBERT](https://sbert.net). O sBERT utiliza uma [rede neural siamesa](https://en.wikipedia.org/wiki/Siamese_neural_network), que consiste em, dois BERts idênticos, compartilhando os mesmos pesos, que recebem duas sentenças como entrada, passam por uma camada de pooling, utilizando a média, e por fim, para identificar similaridade entre as sentenças, é utilizada a [similaridade por cosseno](https://en.wikipedia.org/wiki/Cosine_similarity), como pode ser visto na figura 1. Os hiperparâmetros utilizados foram os padrões do modelo, que podem ser encontrados em [Hiperparâmetros](https://huggingface.co/gianvr/sbert-tunned-covid#all-hyperparameters).
+Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transformers/all-MiniLM-L6-v2` do [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), um modelo do tipo `Sentence Transformer` ou [sBERT](https://sbert.net). O sBERT utiliza uma [rede neural siamesa](https://en.wikipedia.org/wiki/Siamese_neural_network), que consiste em, dois BERts idênticos, compartilhando os mesmos pesos, que recebem duas sentenças como entrada, passam por uma camada de pooling, utilizando a média, e por fim, para identificar similaridade entre as sentenças, é utilizada a [similaridade por cosseno](https://en.wikipedia.org/wiki/Cosine_similarity), como pode ser visto na figura 1. Os hiperparâmetros utilizados foram os padrões do modelo, que podem ser encontrados em: [hiperparâmetros](https://huggingface.co/gianvr/sbert-tunned-covid#all-hyperparameters).
 
 <div align="center" style="max-width:68rem;">
 <table>
@@ -112,7 +112,7 @@ O modelo pode ser encontrado em: https://huggingface.co/gianvr/sbert-tunned-covi
 
 - [SBERT: How to Use Sentence Embeddings to Solve Real-World Problems](https://anirbansen2709.medium.com/sbert-how-to-use-sentence-embeddings-to-solve-real-world-problems-f950aa300c72)
 - [Coronavirus tweets NLP - Text Classification](https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification?select=Corona_NLP_train.csv)
-- [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+- [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 - [Siamese neural network](https://en.wikipedia.org/wiki/Siamese_neural_network)
 - [sBERT](https://sbert.net)
 - [Cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
