@@ -1,5 +1,10 @@
 # APS 2
 
+## 0. Dependências
+```bash
+pip install -r requirements.txt
+```
+
 ## 1. Encontrando embeddings
 
 ### 1.1 Dataset 
