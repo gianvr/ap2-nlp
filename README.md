@@ -46,3 +46,40 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos, o que pode indicar que, embora sejam de sentimentos opostos, estão tratando do mesmo assunto. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, o que indica que o modelo foi capaz de separar tweets opostos, dado que sentimentos extremamente negativos e extremamente positivos estão nos extremos opostos do gráfico.
 
 
+## 3. Sistema de busca
+
+### Teste que retorna 10 tweets
+
+Query:
+```
+covid is a hoax
+```
+
+pytest:
+```bash
+pytest test/test_query.py::test_query_yields_10_results
+```
+
+### Teste que retorna mais que 1 e menos que 10 tweets
+
+Query:
+```
+covid and h1n1
+```
+
+pytest:
+```bash
+pytest test/test_query.py::test_query_yields_few_results
+```
+
+### Teste que retorna algo não óbvio
+
+Query:
+```
+public transport
+```
+
+pytest:
+```bash
+pytest test/test_query.py::test_query_yields_non_obvious_results
+```
