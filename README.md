@@ -19,6 +19,7 @@ pip install -r requirements.txt
     - [Teste que retorna mais que 1 e menos que 10 tweets](#teste-que-retorna-mais-que-1-e-menos-que-10-tweets)
     - [Teste que retorna algo não óbvio](#teste-que-retorna-algo-não-óbvio)
   - [4. Hugging Face](#4-hugging-face)
+  - [5. Referências](#5-referências)
 
 ## 1. Encontrando embeddings
 
@@ -63,9 +64,7 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 </table>
 </div>
 
-Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos, o que pode indicar que, embora sejam de sentimentos opostos, estão tratando do mesmo assunto. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, o que indica que o modelo foi capaz de separar tweets opostos, dado que sentimentos extremamente negativos e extremamente positivos estão nos extremos opostos do gráfico.
-
-
+Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos, o que pode indicar que, embora sejam de sentimentos opostos, estão tratando do mesmo assunto. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, principalmente em relação aos positivos e extremamente positivos. Os tweets negativos e extremamente negativos, embora estejam mais deslocados para a direita, estão mais distribuidos pelo gráfico, o que indica que embora apresentem um mesmo sentimento estão tratando de assuntos diferentes, algo similar que acontece com os tweets neutros.
 ## 3. Sistema de busca
 
 ### Teste que retorna 10 tweets
@@ -108,3 +107,15 @@ pytest test/test_query.py::test_query_yields_non_obvious_results
 ## 4. Hugging Face
 
 O modelo pode ser encontrado em: https://huggingface.co/gianvr/sbert-tunned-covid
+
+## 5. Referências
+
+- [SBERT: How to Use Sentence Embeddings to Solve Real-World Problems](https://anirbansen2709.medium.com/sbert-how-to-use-sentence-embeddings-to-solve-real-world-problems-f950aa300c72)
+- [Coronavirus tweets NLP - Text Classification](https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification?select=Corona_NLP_train.csv)
+- [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+- [Siamese neural network](https://en.wikipedia.org/wiki/Siamese_neural_network)
+- [sBERT](https://sbert.net)
+- [Cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
+- [CosineSimilarityLoss](https://www.sbert.net/docs/package_reference/sentence_transformer/losses.html#sentence_transformers.losses.CosineSimilarityLoss)
+- [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/abs/1908.10084)
+- [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)
