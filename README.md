@@ -5,6 +5,21 @@
 pip install -r requirements.txt
 ```
 
+## Sumário
+- [APS 2](#aps-2)
+  - [0. Dependências](#0-dependências)
+  - [Sumário](#sumário)
+  - [1. Encontrando embeddings](#1-encontrando-embeddings)
+    - [1.1 Dataset](#11-dataset)
+    - [1.2 Processo para gerar embeddings](#12-processo-para-gerar-embeddings)
+    - [1.3 Processo de treinamento](#13-processo-de-treinamento)
+  - [2. Visualização dos embeddings](#2-visualização-dos-embeddings)
+  - [3. Sistema de busca](#3-sistema-de-busca)
+    - [Teste que retorna 10 tweets](#teste-que-retorna-10-tweets)
+    - [Teste que retorna mais que 1 e menos que 10 tweets](#teste-que-retorna-mais-que-1-e-menos-que-10-tweets)
+    - [Teste que retorna algo não óbvio](#teste-que-retorna-algo-não-óbvio)
+  - [4. Hugging Face](#4-hugging-face)
+
 ## 1. Encontrando embeddings
 
 ### 1.1 Dataset 
@@ -88,3 +103,8 @@ pytest:
 ```bash
 pytest test/test_query.py::test_query_yields_non_obvious_results
 ```
+
+
+## 4. Hugging Face
+
+O modelo pode ser encontrado em: https://huggingface.co/gianvr/sbert-tunned-covid
