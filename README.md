@@ -141,6 +141,7 @@ pytest:
 ```bash
 pytest test/test_query.py::test_query_yields_non_obvious_results
 ```
+Results:
 
 |      |Document |                                    OriginalTweet                                  |Relevance |
 | ---- | ------- | --------------------------------------------------------------------------------- | -------- |
