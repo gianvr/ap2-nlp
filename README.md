@@ -64,7 +64,8 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 </table>
 </div>
 
-Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos, o que pode indicar que, embora sejam de sentimentos opostos, estão tratando do mesmo assunto. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, principalmente em relação aos positivos e extremamente positivos. Os tweets negativos e extremamente negativos, embora estejam mais deslocados para a direita, estão mais distribuidos pelo gráfico, o que indica que embora apresentem um mesmo sentimento estão tratando de assuntos diferentes, algo similar que acontece com os tweets neutros.
+Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, principalmente em relação aos positivos e extremamente positivos que estão mais deslocados para a esquerda. Os tweets negativos e extremamente negativos, embora estejam mais deslocados para a direita, estão mais distribuidos pelo gráfico, indicando que o treinamento não encontrou a mesma similaridade que ocorreu nos tweets extremamente positivos, algo similar que acontece com os tweets neutros.
+
 ## 3. Sistema de busca
 
 ### Teste que retorna 10 tweets
