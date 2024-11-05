@@ -1,14 +1,8 @@
 # APS 2
 
-## 0. Dependências
-```bash
-pip install -r requirements.txt
-```
-
 ## Sumário
 - [APS 2](#aps-2)
   - [0. Dependências](#0-dependências)
-  - [Sumário](#sumário)
   - [1. Encontrando embeddings](#1-encontrando-embeddings)
     - [1.1 Dataset](#11-dataset)
     - [1.2 Processo para gerar embeddings](#12-processo-para-gerar-embeddings)
@@ -21,8 +15,17 @@ pip install -r requirements.txt
   - [4. Hugging Face](#4-hugging-face)
   - [5. Referências](#5-referências)
 
+
+## 0. Dependências
+```bash
+pip install -r requirements.txt
+```
+
 ## 1. Encontrando embeddings
 
+> [!NOTE]
+> O código para essa etapa está em `notebook.ipynb` 
+ 
 ### 1.1 Dataset 
 
 O dataset utilizado foi o [Coronavirus tweets NLP - Text Classification](https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification?select=Corona_NLP_train.csv) que contém tweets relacionados ao COVID-19. Os tweets foram classificados em 5 categorias: Extremely Negative, Negative, Neutral, Positive e Extremely Positive. Foram utilizadas as colunas OriginalTweet, com o texto do tweet, e Sentiment, com a classificação do tweet.
@@ -42,7 +45,7 @@ Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transfo
 
 ### 1.3 Processo de treinamento
 
-Para o processo de treinamento foram criados pares de tweets de diferentes sentimentos, podendo ser combinações de extremamente positivos, positivos, neutros, negativos e extremamente negativos, após a criação dos pares o dataset foi embaralhado e utilizado 25% dele para acelerar o treinamento. Cada par foi dado um valor que representa sua similaridade, sendo 0 para os extremos, 0.7 para sentimentos similares, 0.2 para sentimentos extremos, sentimentos opostos não extremos e neutros e 0.5 para sentimentos neutros e não extremos. A loss function utilizada foi a [CosineSimilarityLoss](https://www.sbert.net/docs/package_reference/sentence_transformer/losses.html#sentence_transformers.losses.CosineSimilarityLoss), ela recebe dois vetores de embeddings e calcula a similaridade por cosseno entre eles, pode ser vista na Equação 1. Ela foi utilizada pois o experimento consiste em agrupar tweets de sentimentos similares e separar tweets de sentimentos diferentes, e ao definir esses valores manualmente, a loss function foi utilizada para otimizar os embeddings para essa tarefa.
+Para o processo de treinamento foram criados pares de tweets de diferentes sentimentos, podendo ser combinações de extremamente positivos, positivos, neutros, negativos e extremamente negativos, após a criação dos pares o dataset foi embaralhado e utilizado 25% dele para acelerar o treinamento. Cada par foi dado um valor que representa sua similaridade, sendo 0 para os extremos, 0.7 para sentimentos similares, 0.2 para sentimentos extremos, sentimentos opostos não extremos e neutros e 0.5 para sentimentos neutros e não extremos. A loss function utilizada foi a [CosineSimilarityLoss](https://www.sbert.net/docs/package_reference/sentence_transformer/losses.html#sentence_transformers.losses.CosineSimilarityLoss), ela recebe dois vetores de embeddings e calcula a similaridade por cosseno entre eles, pode ser vista na Equação 1, sendo que para comparar o valor de saída com o label da entrada utiliza-se o MSE. Ela foi utilizada pois o experimento consiste em agrupar tweets de sentimentos similares e separar tweets de sentimentos diferentes, e ao definir esses valores manualmente, a loss function foi utilizada para otimizar os embeddings para essa tarefa.
 
 <div align="center" style="max-width:68rem;">
 <table>
@@ -53,6 +56,9 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 </div>
 
 ## 2. Visualização dos embeddings
+
+> [!NOTE]
+> O código para essa etapa está em `notebook.ipynb`
 
 <div align="center" style="max-width:68rem;">
 <table>
@@ -67,6 +73,9 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, principalmente em relação aos positivos e extremamente positivos que estão mais deslocados para a esquerda. Os tweets negativos e extremamente negativos, embora estejam mais deslocados para a direita, estão mais distribuidos pelo gráfico, indicando que o treinamento não encontrou a mesma similaridade que ocorreu nos tweets extremamente positivos, algo similar que acontece com os tweets neutros.
 
 ## 3. Sistema de busca
+
+> [!NOTE]
+> O código para essa etapa está em `notebook.ipynb`
 
 ### Teste que retorna 10 tweets
 
