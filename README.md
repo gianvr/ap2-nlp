@@ -84,7 +84,7 @@ Embora ocorra uma menor consistência no cluster de sentimentos neutros, e negat
 
 Query:
 ```
-covid is a hoax
+covid is a hoax.
 ```
 
 pytest:
@@ -96,7 +96,7 @@ pytest test/test_query.py::test_query_yields_10_results
 
 Query:
 ```
-covid and h1n1
+covid and h1n1.
 ```
 
 pytest:
@@ -108,7 +108,7 @@ pytest test/test_query.py::test_query_yields_few_results
 
 Query:
 ```
-public transport
+public transport.
 ```
 
 pytest:
