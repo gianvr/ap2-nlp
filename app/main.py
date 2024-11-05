@@ -13,7 +13,7 @@ def read_hello():
 
 @app.get("/query")
 def query_route(query: str = Query(..., description="Search query")):
-    results = get_recommendation(query, threshold=.25)
+    results = get_recommendation(query, threshold=.86)
     recommendations = []
     for i, row in results.iterrows():
         recommendations.append(

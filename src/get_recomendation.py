@@ -1,9 +1,14 @@
+import sys
+
 import numpy as np
 import pandas as pd
 import torch
 from sentence_transformers import SentenceTransformer
 
-from src.get_data import get_data
+try:
+    from src.get_data import get_data
+except ImportError:
+    from get_data import get_data
 
 
 def load_embeddings_from_data():
@@ -11,10 +16,9 @@ def load_embeddings_from_data():
     return embeddings
 
 
-
-def get_recommendation(query, threshold=0.25):
+def get_recommendation(query, threshold=0.86):
     df = get_data()
-    embedder = SentenceTransformer("models/tunned_sbert_corona")
+    embedder = SentenceTransformer("gianvr/sbert-tunned-covid")
     query_embedding = embedder.encode(query)
 
     embeddings = load_embeddings_from_data()
@@ -36,3 +40,9 @@ def get_recommendation(query, threshold=0.25):
             )
     df_results = pd.DataFrame(results)
     return df_results
+
+
+if __name__ == "__main__":
+    query = sys.argv[1]
+    df_results = get_recommendation(query)
+    print(df_results)
