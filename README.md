@@ -2,6 +2,7 @@
 
 ## Sumário
 - [APS 2](#aps-2)
+  - [Sumário](#sumário)
   - [0. Dependências](#0-dependências)
   - [1. Encontrando embeddings](#1-encontrando-embeddings)
     - [1.1 Dataset](#11-dataset)
@@ -70,7 +71,9 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 </table>
 </div>
 
-Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação clara entre os sentimentos. Já na Figura 3, é possível ver os embeddings mais separados em relação a seu sentimento, principalmente em relação aos positivos e extremamente positivos que estão mais deslocados para a esquerda. Os tweets negativos e extremamente negativos, embora estejam mais deslocados para a direita, estão mais distribuidos pelo gráfico, indicando que o treinamento não encontrou a mesma similaridade que ocorreu nos tweets extremamente positivos, algo similar que acontece com os tweets neutros.
+Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html), para reduzi-los para 2 dimensões. Na Figura 2 é possível ver os embeddings pré-treinados, onde os tweets estão bem distribuídos, porém não é possível ver uma separação entre os sentimentos. Já na Figura 3, é possível ver os embeddings agrupados por seus sentimentos, nela é possível notar 3 clusters, um para sentimentos positivos, um para sentimentos negativos e um para sentimentos neutros. Sendo que é notório uma consistência maior no cluster de sentimentos positivos, enquanto principalmente o cluster de sentimentos neutros ocorre uma quebra, em que não a continuidade dos tweets.
+
+Embora ocorra uma menor consistência no cluster de sentimentos neutros, e negativos, comparada ao cluster de sentimentos positivos, ainda assim é possível notar que cada sentimento está para um lado do gráfico. Os sentimentos positivos estão mais a direita, os sentimentos neutros mais para a esquerda e os sentimentos negativos mais para cima. Com isso o modelo foi capaz de gerar embeddings que agrupam por sentimentos. 
 
 ## 3. Sistema de busca
 
