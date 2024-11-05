@@ -4,7 +4,7 @@ from app.main import app
 client = TestClient(app)
 
 def test_query_yields_10_results():
-    response = client.get("/query?query=covid is a hoax")
+    response = client.get("/query?query=covid is a hoax.")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -12,7 +12,7 @@ def test_query_yields_10_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_few_results():
-    response = client.get("/query?query=covid and h1n1")
+    response = client.get("/query?query=covid and h1n1.")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -20,7 +20,7 @@ def test_query_yields_few_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_non_obvious_results():
-    response = client.get("/query?query=public transport")
+    response = client.get("/query?query=public transport.")
     json_response = response.json()
         
     assert response.status_code == 200

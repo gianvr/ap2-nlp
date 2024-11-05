@@ -16,7 +16,7 @@ def load_embeddings_from_data():
     return embeddings
 
 
-def get_recommendation(query, threshold=0.86):
+def get_recommendation(query, threshold=0.94):
     df = get_data()
     embedder = SentenceTransformer("gianvr/sbert-tunned-covid")
     query_embedding = embedder.encode(query)
