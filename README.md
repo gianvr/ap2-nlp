@@ -2,7 +2,6 @@
 
 ## Sumário
 - [APS 2](#aps-2)
-  - [Sumário](#sumário)
   - [0. Dependências](#0-dependências)
   - [1. Encontrando embeddings](#1-encontrando-embeddings)
     - [1.1 Dataset](#11-dataset)
@@ -25,7 +24,7 @@ pip install -r requirements.txt
 ## 1. Encontrando embeddings
 
 > [!NOTE]
-> O código para essa etapa está em `notebook.ipynb` 
+> O código para essa etapa está em `notebook.ipynb`, também é possível visualizar em [Google Colab](https://colab.research.google.com/drive/1gR1Gi5IdsURe7L9479B7wC98bHIYRgMq?usp=sharing)
  
 ### 1.1 Dataset 
 
@@ -59,7 +58,7 @@ Para o processo de treinamento foram criados pares de tweets de diferentes senti
 ## 2. Visualização dos embeddings
 
 > [!NOTE]
-> O código para essa etapa está em `notebook.ipynb`
+> O código para essa etapa está em `notebook.ipynb`, também é possível visualizar em [Google Colab](https://colab.research.google.com/drive/1gR1Gi5IdsURe7L9479B7wC98bHIYRgMq?usp=sharing)
 
 <div align="center" style="max-width:68rem;">
 <table>
