@@ -33,7 +33,7 @@ O dataset utilizado foi o [Coronavirus tweets NLP - Text Classification](https:/
 
 ### 1.2 Processo para gerar embeddings
 
-Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transformers/all-MiniLM-L6-v2` do [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), um modelo do tipo `Sentence Transformer` ou [sBERT](https://sbert.net). O sBERT utiliza uma [rede neural siamesa](https://en.wikipedia.org/wiki/Siamese_neural_network), que consiste em, dois BERTs idênticos, compartilhando os mesmos pesos, que recebem duas sentenças como entrada, passam por uma camada de pooling, utilizando a média, e por fim, para identificar similaridade entre as sentenças, é utilizada a [similaridade por cosseno](https://en.wikipedia.org/wiki/Cosine_similarity), como pode ser visto na figura 1. Os hiperparâmetros utilizados foram os padrões do modelo, que podem ser encontrados em: [hiperparâmetros](https://huggingface.co/gianvr/sbert-tunned-covid#all-hyperparameters).
+Para gerar os embeddings, foi utilizado o modelo pré-treinado `sentence-transformers/all-MiniLM-L6-v2` do [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), um modelo do tipo `Sentence Transformer` ou [sBERT](https://sbert.net), que pode ser vista na Figura 1. O sBERT foi utilizado, pois diferente do BERT, que gera embeddings para palavras, o sBERT gera embeddings para sentenças, e como o objetivo é processar tweets, que são sentenças, o sBERT é mais adequado. Os hiperparâmetros utilizados foram os padrões do modelo, que podem ser encontrados em: [hiperparâmetros](https://huggingface.co/gianvr/sbert-tunned-covid#all-hyperparameters).
 
 <div align="center" style="max-width:68rem;">
 <table>
