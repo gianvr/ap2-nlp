@@ -2,6 +2,7 @@
 
 ## Sumário
 - [APS 2](#aps-2)
+  - [Sumário](#sumário)
   - [0. Dependências](#0-dependências)
   - [1. Encontrando embeddings](#1-encontrando-embeddings)
     - [1.1 Dataset](#11-dataset)
@@ -91,6 +92,21 @@ pytest:
 pytest test/test_query.py::test_query_yields_10_results
 ```
 
+Results:
+
+|      |Document |                                    OriginalTweet                                  |Relevance |
+| ---- | ------- | --------------------------------------------------------------------------------- | -------- |
+| 0    | 17710   |                              How to annoy everyone                                |0.977378  |
+| 1    | 35419   |               How to avoid during when it comes to                                |0.960058  |
+| 2    |  2917   |                  An example of a bastard colony in                                |0.959493  |
+| 3    | 19546   |  All these pedophiles political leaders are all lying to you about the            |0.957530  |
+| 4    |  5506   |                           the new supermarket wars                                |0.954512  |
+| 5    | 29328   |  ally Greenberg of National Consumer s League on false claims regarding CBD and   |0.953748  |
+| 6    | 20229   |          can tap rising demand worldwide due to 19                                |0.952620  |
+| 7    | 31592   |       Gas prices dropping during COVID 19 pandemic                                |0.951462  |
+| 8    | 28258   |  Demand spikes at tri county food banks due to COVID 19 layoffs                   |0.948109  |
+| 9    | 18696   |                        You cant handle the truth                                  |0.946387  |
+
 ### Teste que retorna mais que 1 e menos que 10 tweets
 
 Query:
@@ -102,6 +118,17 @@ pytest:
 ```bash
 pytest test/test_query.py::test_query_yields_few_results
 ```
+Results:
+
+|      |Document |                                    OriginalTweet                                  |Relevance |
+| ---- | ------- | --------------------------------------------------------------------------------- | -------- |
+| 0    | 12121   |                      State your country. https://t.co/X66raoLHva                  |0.974832  |
+| 1    | 31018   |                       Voi taivas varjele.  https://t.co/6wNeXbTHvI                |0.972590  |
+| 2    | 24859   |                          Check out for info from the on                           |0.954417  |
+| 3    | 17174   |                          "The view from Ireland.#coronavirus #LearnEnglish"       |0.953746  |
+| 4    | 1058    |       This was Trump eight days ago. https://t.co/1xVFAYbzws|                     |0.950339  |
+| 5    | 7656    |       IK. KOM. NIET. MEER. BIJ. https://t.co/aos0KAYjfr|                          |0.941919  |
+
 
 ### Teste que retorna algo não óbvio
 
@@ -114,6 +141,15 @@ pytest:
 ```bash
 pytest test/test_query.py::test_query_yields_non_obvious_results
 ```
+
+|      |Document |                                    OriginalTweet                                  |Relevance |
+| ---- | ------- | --------------------------------------------------------------------------------- | -------- |
+|0     |  39290  |       Toilet paper                                                                |  0.96510 |
+|1     |  19410  |       BREAKING NEWS                                                               |  0.96078 |
+|2     |  16872  |       Cartoon for                                                                 |  0.95235 |
+|3     |  15577  |       Tissue Issue                                                                |  0.95131 |
+|4     |  12246  |       From a supermarket in     19                                                |  0.94601 |
+|5     |  25022  |       Supermarket lines in                                                        |  0.94032 |
 
 
 ## 4. Hugging Face
