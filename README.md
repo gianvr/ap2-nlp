@@ -75,7 +75,7 @@ Para a visualização dos embeddings foi utilizado o [TNSE](https://scikit-learn
 ## 3. Sistema de busca
 
 > [!NOTE]
-> O código para essa etapa está em `notebook.ipynb`
+> O código para essa etapa está em `src/get_recommendation.py`, e os testes em: `test/test_query.py`. Também é possível executar por `python src/get_recomendation.py "SUA_QUERY"`
 
 ### Teste que retorna 10 tweets
 
